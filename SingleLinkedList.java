@@ -23,11 +23,23 @@ public class SingleLinkedList<T> {
         }
     }
 
+    public void printAll() {
+        if (head != null) {
+            Node<T> node = this.head;
+            System.out.println(node.data);
+            while (node.next != null) {
+                node = node.next;
+                System.out.println(node.data);
+            }
+        }
+    }
+
     public static void main(String[] args) {
         SingleLinkedList<Integer> MyLinkedList = new SingleLinkedList<Integer>();
         MyLinkedList.addNode(1);
-        System.out.println(MyLinkedList.head.data);
         MyLinkedList.addNode(2);
-        System.out.println(MyLinkedList.head.next.data);
+        MyLinkedList.addNode(3);
+
+        MyLinkedList.printAll();
     }
 }
