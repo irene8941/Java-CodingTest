@@ -10,8 +10,10 @@ public class BFSSearch {
         ArrayList<String> needVisit = new ArrayList<>();
 
         needVisit.add(startNode);
+        int count = 0;
 
         while (!needVisit.isEmpty()) {
+            count += 1;
             String node = needVisit.remove(0);
 
             if (!visited.contains(node)) {
@@ -20,6 +22,7 @@ public class BFSSearch {
             }
         }
 
+        System.out.println(count);
         return visited;
     }
 
@@ -45,3 +48,6 @@ public class BFSSearch {
         System.out.println(bObject.bfsFunctions(graph, "A"));
     }
 }
+
+// 노드 수(V), 간선 수(E)
+// 시간복잡도 : O(V+E)
